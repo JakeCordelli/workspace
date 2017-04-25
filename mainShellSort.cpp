@@ -5,6 +5,7 @@
 //  Created by Jake Cordelli on 4/24/17.
 //  Copyright © 2017 Jake Cordelli. All rights reserved.
 //  Code Assistance from http://www.sanfoundry.com/cplusplus-program-implement-shell-sort/
+//  Implemented and modified by Jake Cordelli
 
 #include <iostream>
 #include <chrono>
@@ -12,8 +13,8 @@
 
 using namespace std;
 
-
 //Print values
+//This simply prints the array
 void print_ar (int ar[], int size)
 {
     for (int i = 0; i < size; ++i)
@@ -49,7 +50,6 @@ int main(int argc, const char * argv[]) {
     std::chrono::time_point<std::chrono::system_clock> start, end;
     start = std::chrono::system_clock::now();
     
-
     
     //Elements in the array (TURN THIS INTO A VECTOR)
     int ar[] = {1, 4, 16, 30, 29, 18, 100, 2, 43, 1};
