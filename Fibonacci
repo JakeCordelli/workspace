@@ -1,0 +1,134 @@
+package Tables;
+import javax.swing.*;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.print.*;
+import java.text.DecimalFormat;
+
+public class Fibonacci  {
+	// Java program for Fibonacci number using recursion.
+    public static int fibonacciRecusion(int number){
+        if(number == 1 || number == 2){
+            return 1;
+        }
+ 
+        return fibonacciRecusion(number-1) + fibonacciRecusion(number -2); //tail recursion
+    }
+    
+  public static void main(String args[]) {
+	final Object rows[][] = {
+//      {0,   fibonacciRecusion(0)},
+			
+      {1,   fibonacciRecusion(1)},
+      {2,   fibonacciRecusion(2)},
+      {3,   fibonacciRecusion(3)},
+      {4,   fibonacciRecusion(4)},
+      {5,   fibonacciRecusion(5)},
+      {6,   fibonacciRecusion(6)},
+      {7,   fibonacciRecusion(7)},
+      {8,   fibonacciRecusion(8)},
+      {9,   fibonacciRecusion(9)},
+      {10,   fibonacciRecusion(10)},
+      {11,   fibonacciRecusion(11)},
+      {12,   fibonacciRecusion(12)},
+      {13,   fibonacciRecusion(13)},
+      {14,   fibonacciRecusion(14)},
+      {15,   fibonacciRecusion(15)},
+      {16,   fibonacciRecusion(16)},
+      {17,   fibonacciRecusion(17)},
+      {18,   fibonacciRecusion(18)},
+      {19,   fibonacciRecusion(19)},
+      {20,   fibonacciRecusion(20)},
+      {21,   fibonacciRecusion(21)},
+      {22,   fibonacciRecusion(22)},
+      {23,   fibonacciRecusion(23)},
+      {24,   fibonacciRecusion(24)},
+      {25,   fibonacciRecusion(25)},
+      {26,   fibonacciRecusion(26)},
+      {27,   fibonacciRecusion(27)},
+      {28,   fibonacciRecusion(28)},
+      {29,   fibonacciRecusion(29)},
+      {30,   fibonacciRecusion(30)},
+      {31,   fibonacciRecusion(31)},
+      {32,   fibonacciRecusion(32)},
+      {33,   fibonacciRecusion(33)},
+      {34,   fibonacciRecusion(34)},
+      {35,   fibonacciRecusion(35)},
+      {36,   fibonacciRecusion(36)},
+      {37,   fibonacciRecusion(37)},
+      {38,   fibonacciRecusion(38)},
+      {39,   fibonacciRecusion(39)},
+      {40,   fibonacciRecusion(40)},
+      
+//      {41,   fibonacciRecusion(41)},
+//      {42,   fibonacciRecusion(42)},
+//      {43,   fibonacciRecusion(43)},
+//      {44,   fibonacciRecusion(44)},
+//      {45,   fibonacciRecusion(45)},
+//      {46,   fibonacciRecusion(46)},
+//      {47,   fibonacciRecusion(47)},
+//      {48,   fibonacciRecusion(48)},
+//      {49,   fibonacciRecusion(49)},
+//      {50,   fibonacciRecusion(50)},
+//      {51,   fibonacciRecusion(51)},
+//      {52,   fibonacciRecusion(52)},
+//      {53,   fibonacciRecusion(53)},
+//      {54,   fibonacciRecusion(54)},
+//      {55,   fibonacciRecusion(55)},
+//      {56,   fibonacciRecusion(56)},
+//      {57,   fibonacciRecusion(57)},
+//      {58,   fibonacciRecusion(58)},
+//      {59,   fibonacciRecusion(59)},
+//      {60,   fibonacciRecusion(60)},
+//      {61,   fibonacciRecusion(61)},
+//      {62,   fibonacciRecusion(62)},
+//      {63,   fibonacciRecusion(63)},
+//      {64,   fibonacciRecusion(64)},
+//      {65,   fibonacciRecusion(65)},
+//      {66,   fibonacciRecusion(66)},
+//      {67,   fibonacciRecusion(67)},
+//      {68,   fibonacciRecusion(68)},
+//      {69,   fibonacciRecusion(69)},
+//      {70,   fibonacciRecusion(70)},
+//      {71,   fibonacciRecusion(71)},
+//      {72,   fibonacciRecusion(72)},
+//      {73,   fibonacciRecusion(73)},
+//      {74,   fibonacciRecusion(74)},
+//      {75,   fibonacciRecusion(75)},
+//      {76,   fibonacciRecusion(76)},
+//      {77,   fibonacciRecusion(77)},
+//      {78,   fibonacciRecusion(78)},
+//      {79,   fibonacciRecusion(79)},
+//      {80,   fibonacciRecusion(80)},
+      
+      
+
+
+    };
+    final Object headers[] = {"Number of Iterations", "#"};
+    
+
+    JFrame frame = new JFrame("Fibonacci Sequence");
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    final JTable table = new JTable(rows, headers);
+    JScrollPane scrollPane = new JScrollPane(table);
+    frame.add(scrollPane, BorderLayout.CENTER);
+    JButton button = new JButton("Print The Sequence, Motherfucker");
+    ActionListener printAction = new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        try {
+          table.print();
+        } catch (PrinterException pe) {
+          System.err.println("Error printing: " + pe.getMessage());
+        }
+      }
+    };
+    button.addActionListener(printAction);
+    frame.add(button, BorderLayout.SOUTH);
+    frame.setSize(600, 600);
+    frame.setVisible(true);
+  }
+
+}
